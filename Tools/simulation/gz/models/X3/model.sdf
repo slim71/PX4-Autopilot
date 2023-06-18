@@ -2,18 +2,20 @@
 <sdf version="1.6">
     <model name="X3">
         <pose>0 0 0.053302 0 0 0</pose>
+
         <link name="base_link">
-            <pose frame="">0 0 0 0 -0 0</pose>
+            <pose frame="">0 0 0 0 0 0</pose>
+
             <inertial>
                 <pose frame="">0 0 0 0 -0 0</pose>
                 <mass>1.5</mass>
                 <inertia>
-                  <ixx>0.025</ixx>
-                  <ixy>0</ixy>
-                  <ixz>0</ixz>
-                  <iyy>0.009</iyy>
-                  <iyz>0</iyz>
-                  <izz>0.033</izz>
+                    <ixx>0.025</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.009</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.033</izz>
                 </inertia>
             </inertial>
             <collision name="base_link_inertia_collision">
@@ -86,7 +88,8 @@
             </visual>
 
             <light name="right_light_source" type="spot">
-                <pose frame="">0.01 -0.08 0.05 3.131592653589795 -1.5107899999999999 2.841592653589791</pose>
+                <pose frame="">0.01 -0.08 0.05 3.131592653589795 -1.5107899999999999
+                    2.841592653589791</pose>
                 <attenuation>
                     <range>15</range>
                     <linear>0</linear>
@@ -122,7 +125,8 @@
                 <cast_shadows>1</cast_shadows>
             </light>
             <light name="left_flashlight_source" type="spot">
-                <pose frame="">0.01 0.08 0.05 3.131592653589795 -1.5107899999999999 -2.841592653589791</pose>
+                <pose frame="">0.01 0.08 0.05 3.131592653589795 -1.5107899999999999
+                    -2.841592653589791</pose>
                 <attenuation>
                     <range>15</range>
                     <linear>0</linear>
@@ -140,121 +144,6 @@
                 <cast_shadows>1</cast_shadows>
             </light>
 
-            <sensor name="imu_sensor" type="imu">
-                <always_on>1</always_on>
-                <update_rate>250</update_rate>
-                <imu>
-                    <enable_orientation>0</enable_orientation>
-                    <angular_velocity>
-                        <x>
-                            <noise type="gaussian">
-                                <mean>0</mean>
-                                <stddev>0.009</stddev>
-                                <bias_mean>0.00075</bias_mean>
-                                <bias_stddev>0.005</bias_stddev>
-                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
-				<dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
-				<precision>0.00025</precision>
-                            </noise>
-                        </x>
-                        <y>
-                            <noise type="gaussian">
-                                <mean>0</mean>
-                                <stddev>0.009</stddev>
-                                <bias_mean>0.00075</bias_mean>
-                                <bias_stddev>0.005</bias_stddev>
-                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
-				<dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
-				<precision>0.00025</precision>
-                            </noise>
-                        </y>
-                        <z>
-                            <noise type="gaussian">
-                                <mean>0</mean>
-                                <stddev>0.009</stddev>
-                                <bias_mean>0.00075</bias_mean>
-                                <bias_stddev>0.005</bias_stddev>
-                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
-				<dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
-				<precision>0.00025</precision>
-                            </noise>
-                        </z>
-                    </angular_velocity>
-                    <linear_acceleration>
-                        <x>
-                            <noise type="gaussian">
-                                <mean>0</mean>
-                                <stddev>0.021</stddev>
-                                <bias_mean>0.05</bias_mean>
-                                <bias_stddev>0.0075</bias_stddev>
-                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
-				<dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
-				<precision>0.005</precision>
-                            </noise>
-                        </x>
-                        <y>
-                            <noise type="gaussian">
-                                <mean>0</mean>
-                                <stddev>0.021</stddev>
-                                <bias_mean>0.05</bias_mean>
-                                <bias_stddev>0.0075</bias_stddev>
-                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
-				<dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
-				<precision>0.005</precision>
-                            </noise>
-                        </y>
-                        <z>
-                            <noise type="gaussian">
-                                <mean>0</mean>
-                                <stddev>0.021</stddev>
-                                <bias_mean>0.05</bias_mean>
-                                <bias_stddev>0.0075</bias_stddev>
-                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
-				<dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
-				<precision>0.005</precision>
-                            </noise>
-                        </z>
-                    </linear_acceleration>
-                </imu>
-
-            </sensor>
-            <sensor name="air_pressure" type="air_pressure">
-                <always_on>1</always_on>
-                <update_rate>20</update_rate>
-                <air_pressure>
-                    <reference_altitude>0</reference_altitude>
-                    <pressure>
-                        <noise type="gaussian">
-                            <mean>0.00000008</mean>
-                        </noise>
-                    </pressure>
-                </air_pressure>
-            </sensor>
-            <sensor name="magnetometer" type="magnetometer">
-                <always_on>1</always_on>
-                <update_rate>20</update_rate>
-                <magnetometer>
-                    <x>
-                        <noise type="gaussian">
-                            <mean>0.000000080</mean>
-                            <bias_mean>0.000000400</bias_mean>
-                        </noise>
-                    </x>
-                    <y>
-                        <noise type="gaussian">
-                            <mean>0.000000080</mean>
-                            <bias_mean>0.000000400</bias_mean>
-                        </noise>
-                    </y>
-                    <z>
-                        <noise type="gaussian">
-                            <mean>0.000000080</mean>
-                            <bias_mean>0.000000400</bias_mean>
-                        </noise>
-                    </z>
-                </magnetometer>
-            </sensor>
-
             <visual name="camera_visual">
                 <pose>0.1 0 0 0 0 0</pose>
                 <geometry>
@@ -263,7 +152,7 @@
                     </box>
                 </geometry>
             </visual>
-
+            
             <sensor name="camera_front" type="camera">
                 <pose>0.1 0 0 0 0 0</pose>
                 <always_on>1</always_on>
@@ -274,14 +163,14 @@
                     <horizontal_fov>2</horizontal_fov>
                     <lens>
                         <intrinsics>
-                          <!-- fx = fy = width / ( 2 * tan (hfov / 2 ) ) -->
-                          <fx>277.1</fx>
-                          <fy>277.1</fy>
-                          <!-- cx = ( width + 1 ) / 2 -->
-                          <cx>160.5</cx>
-                          <!-- cy = ( height + 1 ) / 2 -->
-                          <cy>120.5</cy>
-                          <s>0</s>
+                            <!-- fx = fy = width / ( 2 * tan (hfov / 2 ) ) -->
+                            <fx>277.1</fx>
+                            <fy>277.1</fy>
+                            <!-- cx = ( width + 1 ) / 2 -->
+                            <cx>160.5</cx>
+                            <!-- cy = ( height + 1 ) / 2 -->
+                            <cy>120.5</cy>
+                            <s>0</s>
                         </intrinsics>
                     </lens>
                     <distortion>
@@ -308,15 +197,101 @@
                     </noise>
                 </camera>
             </sensor>
+            <sensor name="imu_sensor" type="imu">
+                <always_on>1</always_on>
+                <update_rate>250</update_rate>
+                <imu>
+                    <enable_orientation>0</enable_orientation>
+                    <angular_velocity>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.009</stddev>
+                                <bias_mean>0.00075</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                                <precision>0.00025</precision>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.009</stddev>
+                                <bias_mean>0.00075</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                                <precision>0.00025</precision>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.009</stddev>
+                                <bias_mean>0.00075</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                                <precision>0.00025</precision>
+                            </noise>
+                        </z>
+                    </angular_velocity>
+                    <linear_acceleration>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.021</stddev>
+                                <bias_mean>0.05</bias_mean>
+                                <bias_stddev>0.0075</bias_stddev>
+                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                                <precision>0.005</precision>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.021</stddev>
+                                <bias_mean>0.05</bias_mean>
+                                <bias_stddev>0.0075</bias_stddev>
+                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                                <precision>0.005</precision>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.021</stddev>
+                                <bias_mean>0.05</bias_mean>
+                                <bias_stddev>0.0075</bias_stddev>
+                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                                <precision>0.005</precision>
+                            </noise>
+                        </z>
+                    </linear_acceleration>
+                </imu>
+            </sensor>
+            <sensor name="air_pressure_sensor" type="air_pressure">
+                <always_on>1</always_on>
+                <update_rate>50</update_rate>
+                <air_pressure>
+                    <pressure>
+                        <noise type="gaussian">
+                            <mean>0</mean>
+                            <stddev>0.01</stddev>
+                        </noise>
+                    </pressure>
+                </air_pressure>
+            </sensor>
         </link>
 
         <link name="rotor_0">
-            <gravity>true</gravity>
-            <self_collide>false</self_collide>
-            <velocity_decay/>
             <pose frame="">0.13 -0.22 0.023 0 -0 0</pose>
             <inertial>
-                <pose frame="">0 0 0 0 -0 0</pose>
+                <pose frame="">0 0 0 0 0 0</pose>
                 <mass>0.005</mass>
                 <inertia>
                     <ixx>9.75e-07</ixx>
@@ -337,15 +312,15 @@
                 </geometry>
                 <surface>
                     <contact>
-                        <ode/>
+                        <ode />
                     </contact>
                     <friction>
-                        <ode/>
+                        <ode />
                     </friction>
                 </surface>
             </collision>
             <visual name="rotor_0_visual">
-                <pose frame="">0 0 0 0 -0 0</pose>
+                <pose frame="">0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh>
                         <scale>0.1 0.1 0.1</scale>
@@ -362,7 +337,7 @@
                 <cast_shadows>0</cast_shadows>
             </visual>
             <gravity>1</gravity>
-            <velocity_decay/>
+            <velocity_decay />
         </link>
         <joint name="rotor_0_joint" type="revolute">
             <child>rotor_0</child>
@@ -380,6 +355,23 @@
                 <use_parent_model_frame>1</use_parent_model_frame>
             </axis>
         </joint>
+        <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+            <jointName>rotor_0_joint</jointName>
+            <linkName>rotor_0</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>command/motor_speed</commandSubTopic>
+            <motorNumber>0</motorNumber>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+        </plugin>
 
         <link name="rotor_1">
             <pose frame="">-0.13 0.2 0.023 0 -0 0</pose>
@@ -405,10 +397,10 @@
                 </geometry>
                 <surface>
                     <contact>
-                        <ode/>
+                        <ode />
                     </contact>
                     <friction>
-                        <ode/>
+                        <ode />
                     </friction>
                 </surface>
             </collision>
@@ -422,7 +414,8 @@
                 </geometry>
                 <material>
                     <diffuse>1 0 0 1</diffuse>
-                    <script>
+                    <script> 
+                    <!-- TODO: colors -->
                         <name>Gazebo/Red</name>
                         <uri>file://media/materials/scripts/gazebo.material</uri>
                     </script>
@@ -430,7 +423,7 @@
                 <cast_shadows>0</cast_shadows>
             </visual>
             <gravity>1</gravity>
-            <velocity_decay/>
+            <velocity_decay />
         </link>
         <joint name="rotor_1_joint" type="revolute">
             <child>rotor_1</child>
@@ -448,6 +441,23 @@
                 <use_parent_model_frame>1</use_parent_model_frame>
             </axis>
         </joint>
+        <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+            <jointName>rotor_1_joint</jointName>
+            <linkName>rotor_1</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>command/motor_speed</commandSubTopic>
+            <motorNumber>1</motorNumber>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+        </plugin>
 
         <link name="rotor_2">
             <pose frame="">0.13 0.22 0.023 0 -0 0</pose>
@@ -473,10 +483,10 @@
                 </geometry>
                 <surface>
                     <contact>
-                        <ode/>
+                        <ode />
                     </contact>
                     <friction>
-                        <ode/>
+                        <ode />
                     </friction>
                 </surface>
             </collision>
@@ -497,8 +507,10 @@
                 </material>
                 <cast_shadows>0</cast_shadows>
             </visual>
-            <gravity>1</gravity>
-            <velocity_decay/>
+
+            <gravity>true</gravity>
+            <self_collide>false</self_collide>
+            <velocity_decay />
         </link>
         <joint name="rotor_2_joint" type="revolute">
             <child>rotor_2</child>
@@ -516,6 +528,23 @@
                 <use_parent_model_frame>1</use_parent_model_frame>
             </axis>
         </joint>
+        <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+            <jointName>rotor_2_joint</jointName>
+            <linkName>rotor_2</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>command/motor_speed</commandSubTopic>
+            <motorNumber>2</motorNumber>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+        </plugin>
 
         <link name="rotor_3">
             <pose frame="">-0.13 -0.2 0.023 0 -0 0</pose>
@@ -541,10 +570,10 @@
                 </geometry>
                 <surface>
                     <contact>
-                        <ode/>
+                        <ode />
                     </contact>
                     <friction>
-                        <ode/>
+                        <ode />
                     </friction>
                 </surface>
             </collision>
@@ -559,14 +588,14 @@
                 <material>
                     <diffuse>1 0 0 1</diffuse>
                     <script>
-                        <name>Gazebo/Red</name>
+                        <name>Gazebo/Black</name>
                         <uri>file://media/materials/scripts/gazebo.material</uri>
                     </script>
                 </material>
                 <cast_shadows>0</cast_shadows>
             </visual>
             <gravity>1</gravity>
-            <velocity_decay/>
+            <velocity_decay />
         </link>
         <joint name="rotor_3_joint" type="revolute">
             <child>rotor_3</child>
@@ -584,71 +613,23 @@
                 <use_parent_model_frame>1</use_parent_model_frame>
             </axis>
         </joint>
+        <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+            <jointName>rotor_3_joint</jointName>
+            <linkName>rotor_3</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>1000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>command/motor_speed</commandSubTopic>
+            <motorNumber>3</motorNumber>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+        </plugin>
 
-   <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
-      <jointName>rotor_0_joint</jointName>
-      <linkName>rotor_0</linkName>
-      <turningDirection>ccw</turningDirection>
-      <timeConstantUp>0.0125</timeConstantUp>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1000.0</maxRotVelocity>
-      <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
-      <commandSubTopic>command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      <motorType>velocity</motorType>
-    </plugin>
-    
-    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
-      <jointName>rotor_1_joint</jointName>
-      <linkName>rotor_1</linkName>
-      <turningDirection>ccw</turningDirection>
-      <timeConstantUp>0.0125</timeConstantUp>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1000.0</maxRotVelocity>
-      <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
-      <commandSubTopic>command/motor_speed</commandSubTopic>
-      <motorNumber>1</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      <motorType>velocity</motorType>
-    </plugin>
-    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
-      <jointName>rotor_2_joint</jointName>
-      <linkName>rotor_2</linkName>
-      <turningDirection>cw</turningDirection>
-      <timeConstantUp>0.0125</timeConstantUp>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1000.0</maxRotVelocity>
-      <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
-      <commandSubTopic>command/motor_speed</commandSubTopic>
-      <motorNumber>2</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      <motorType>velocity</motorType>
-    </plugin>
-    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
-      <jointName>rotor_3_joint</jointName>
-      <linkName>rotor_3</linkName>
-      <turningDirection>cw</turningDirection>
-      <timeConstantUp>0.0125</timeConstantUp>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>1000.0</maxRotVelocity>
-      <motorConstant>8.54858e-06</motorConstant>
-      <momentConstant>0.016</momentConstant>
-      <commandSubTopic>command/motor_speed</commandSubTopic>
-      <motorNumber>3</motorNumber>
-      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      <motorType>velocity</motorType>
-    </plugin>
     </model>
 </sdf>

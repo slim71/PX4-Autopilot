@@ -14,7 +14,7 @@ PX4_SIM_MODEL=${PX4_SIM_MODEL:=typhoon_h480}
 param set-default SIM_GZ_EN 1
 
 param set-default SENS_EN_GPSSIM 1
-param set-default SENS_EN_BAROSIM 1
+param set-default SENS_EN_BAROSIM 0 # TODO: Barometer present both in sdf and here
 param set-default SENS_EN_MAGSIM 1
 
 param set-default MAV_TYPE 13
@@ -22,6 +22,7 @@ param set-default CA_AIRFRAME 0
 param set-default CA_ROTOR_COUNT 6
 
 # Rotors
+# SDF and Airframe have different reference frames!
 param set-default CA_ROTOR0_PX -0.00187896
 param set-default CA_ROTOR0_PY 0.242705
 param set-default CA_ROTOR0_KM -0.05 # CW
@@ -71,3 +72,7 @@ param set-default SIM_GZ_EC_MAX6 1000
 
 # Throttle % needed to hover
 param set-default MPC_THR_HOVER 0.60
+
+# Landing gear
+param set-default PWM_MAIN_FUNC7 400
+param set-default PWM_MAIN_FUNC8 400
