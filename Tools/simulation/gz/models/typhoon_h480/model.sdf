@@ -4,10 +4,10 @@
         <pose>1.0 1.0 3.0 0 0 0</pose>
 
         <link name='base_link'>
-            <pose frame=''>0 0 0 0 -0 0</pose>
+            <pose frame=''>0 0 0 0 0 0</pose>
 
             <inertial>
-                <pose frame=''>0.001005 0 -0.0090035 0 -0 0</pose>
+                <pose frame=''>0.001005 0 -0.0090035 0 0 0</pose>
                 <mass>2.02</mass>
                 <inertia>
                     <ixx>0.011</ixx>
@@ -18,6 +18,7 @@
                     <izz>0.021</izz>
                 </inertia>
             </inertial>
+
             <collision name='base_link_collision'>
                 <pose frame=''>0 0 0.0 0 0 0</pose>
                 <geometry>
@@ -37,8 +38,9 @@
                     </friction>
                 </surface>
             </collision>
+
             <visual name='base_link_visual'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh>
                         <scale>0.001 0.001 0.001</scale>
@@ -53,6 +55,7 @@
                     </script>
                 </material>
             </visual>
+
             <gravity>1</gravity>
             <velocity_decay />
             <self_collide>0</self_collide>
@@ -78,7 +81,7 @@
         <link name="left_leg">
             <inertial>
                 <!-- place holder -->
-                <pose frame=''>0 -0.14314 -0.207252 0 -0 0</pose>
+                <pose frame=''>0 -0.14314 -0.207252 0 0 0</pose>
                 <mass>0.1</mass>
                 <inertia>
                     <ixx>0.001</ixx>
@@ -140,7 +143,7 @@
                 </surface>
             </collision>
             <visual name='base_link_left_leg'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh>
                         <scale>0.001 0.001 0.001</scale>
@@ -187,7 +190,7 @@
         </joint>
 
         <link name="right_leg">
-            <pose frame=''>0 0 0 0 -0 0</pose>
+            <pose frame=''>0 0 0 0 0 0</pose>
             <inertial>
                 <!-- place holder -->
                 <pose frame=''>0 0.14314 -0.207252 0 0 0</pose>
@@ -252,7 +255,7 @@
                 </surface>
             </collision>
             <visual name='base_link_right_leg'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh>
                         <scale>0.001 0.001 0.001</scale>
@@ -306,40 +309,6 @@
             <p_gain>10.0</p_gain>
         </plugin>
 
-        <link name='typhoon_h480/imu_link'>
-            <pose frame=''>0 0 0 0 0 3.1415927</pose>
-            <inertial>
-                <pose frame=''>0 0 0 0 -0 0</pose>
-                <mass>0.015</mass>
-                <inertia>
-                    <ixx>1e-05</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>1e-05</iyy>
-                    <iyz>0</iyz>
-                    <izz>1e-05</izz>
-                </inertia>
-            </inertial>
-        </link>
-        <joint name='typhoon_h480/imu_joint' type='revolute'>
-            <child>typhoon_h480/imu_link</child>
-            <parent>base_link</parent>
-            <axis>
-                <xyz>1 0 0</xyz>
-                <limit>
-                    <lower>0</lower>
-                    <upper>0</upper>
-                    <effort>0</effort>
-                    <velocity>0</velocity>
-                </limit>
-                <dynamics>
-                    <spring_reference>0</spring_reference>
-                    <spring_stiffness>0</spring_stiffness>
-                </dynamics>
-                <use_parent_model_frame>1</use_parent_model_frame>
-            </axis>
-        </joint>
-
         <link name='rotor_0'>
             <pose frame=''>-0.00187896 -0.242705 0.0822169 0 0 -2.09439510239</pose>
             <inertial>
@@ -355,7 +324,7 @@
                 </inertia>
             </inertial>
             <collision name='rotor_0_collision'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.005</length>
@@ -434,7 +403,7 @@
         <link name='rotor_1'>
             <pose frame=''>-0.00187896 0.242705 0.0822169 0 0 0</pose>
             <inertial>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <mass>0.005</mass>
                 <inertia>
                     <ixx>9.75e-07</ixx>
@@ -446,7 +415,7 @@
                 </inertia>
             </inertial>
             <collision name='rotor_1_collision'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.005</length>
@@ -525,7 +494,7 @@
         <link name='rotor_2'>
             <pose frame=''>0.211396 0.119762 0.082219 0 0 0</pose>
             <inertial>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <mass>0.005</mass>
                 <inertia>
                     <ixx>9.75e-07</ixx>
@@ -537,7 +506,7 @@
                 </inertia>
             </inertial>
             <collision name='rotor_2_collision'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.005</length>
@@ -616,7 +585,7 @@
         <link name='rotor_3'>
             <pose frame=''>-0.209396 -0.122762 0.082219 0 0 2.09439510239</pose>
             <inertial>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <mass>0.005</mass>
                 <inertia>
                     <ixx>9.75e-07</ixx>
@@ -628,7 +597,7 @@
                 </inertia>
             </inertial>
             <collision name='rotor_3_collision'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.005</length>
@@ -707,7 +676,7 @@
         <link name='rotor_4'>
             <pose frame=''>0.211396 -0.119762 0.082219 0 0 -2.09439510239</pose>
             <inertial>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <mass>0.005</mass>
                 <inertia>
                     <ixx>9.75e-07</ixx>
@@ -719,7 +688,7 @@
                 </inertia>
             </inertial>
             <collision name='rotor_4_collision'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.005</length>
@@ -798,7 +767,7 @@
         <link name='rotor_5'>
             <pose frame=''>-0.209396 0.122762 0.082219 0 0 2.09439510239</pose>
             <inertial>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <mass>0.005</mass>
                 <inertia>
                     <ixx>9.75e-07</ixx>
@@ -810,7 +779,7 @@
                 </inertia>
             </inertial>
             <collision name='rotor_5_collision'>
-                <pose frame=''>0 0 0 0 -0 0</pose>
+                <pose frame=''>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
                         <length>0.005</length>
