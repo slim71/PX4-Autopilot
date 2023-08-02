@@ -2,7 +2,7 @@
 #
 # @name OpenRobotics X3
 #
-# @type Quadrotor
+# @type Quadrotor x
 #
 
 . ${R}etc/init.d/rc.mc_defaults
