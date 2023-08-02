@@ -175,7 +175,7 @@
             "options": {
                 "cwd": "${workspaceFolder}",
                 "env": {
-                    "IGN_GAZEBO_RESOURCE_PATH": "${workspaceFolder}/Tools/simulation/gz/models",
+                    "GZ_GAZEBO_RESOURCE_PATH": "${workspaceFolder}/Tools/simulation/gz/models",
                 }
             },
             "command": "gz sim -v 4 -r ${workspaceFolder}/Tools/simulation/gz/worlds/${input:gzWorld}.sdf",
