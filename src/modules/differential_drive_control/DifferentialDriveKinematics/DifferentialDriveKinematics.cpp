@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- *   Copyright (c) 2021 PX4 Development Team. All rights reserved.
+ *   Copyright (C) 2023 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -31,21 +31,22 @@
  *
  ****************************************************************************/
 
-#include "ActuatorEffectivenessRoverDifferential.hpp"
-#include <ControlAllocation/ControlAllocation.hpp>
+#include "DifferentialDriveKinematics.hpp"
 
-using namespace matrix;
-
-bool
-ActuatorEffectivenessRoverDifferential::getEffectivenessMatrix(Configuration &configuration,
-		EffectivenessUpdateReason external_update)
+void DifferentialDriveKinematics::setWheelBase(float wheel_base)
 {
-	if (external_update == EffectivenessUpdateReason::NO_EXTERNAL_UPDATE) {
-		return false;
-	}
-
-	configuration.addActuator(ActuatorType::MOTORS, Vector3f{0.f, 0.f, 0.5f}, Vector3f{0.5f, 0.f, 0.f});
-	configuration.addActuator(ActuatorType::MOTORS, Vector3f{0.f, 0.f, -0.5f}, Vector3f{0.5f, 0.f, 0.f});
-	return true;
+	_wheel_base = wheel_base;
 }
 
+void DifferentialDriveKinematics::setWheelRadius(float wheel_radius)
+{
+	_wheel_radius = wheel_radius;
+}
+
+matrix::Vector2f DifferentialDriveKinematics::computeInverseKinematics(float linear_vel_x, float yaw_rate)
+{
+	float motor_vel_right = linear_vel_x / _wheel_radius - _wheel_base / 2.f * yaw_rate / _wheel_radius;
+	float motor_vel_left = linear_vel_x / _wheel_radius + _wheel_base / 2.f * yaw_rate / _wheel_radius;
+
+	return matrix::Vector2f(motor_vel_right, motor_vel_left);
+}
