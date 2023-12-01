@@ -51,6 +51,32 @@ publications:
     type: px4_msgs::msg::VehicleCommandAck
 
 subscriptions:
+  - topic: /fmu/in/register_ext_component_request
+    type: px4_msgs::msg::RegisterExtComponentRequest
+
+  - topic: /fmu/in/differential_drive_setpoint
+    type: px4_msgs::msg::DifferentialDriveSetpoint
+
+  - topic: /fmu/in/unregister_ext_component
+    type: px4_msgs::msg::UnregisterExtComponent
+
+  - topic: /fmu/in/config_overrides_request
+    type: px4_msgs::msg::ConfigOverrides
+
+  - topic: /fmu/in/arming_check_reply
+    type: px4_msgs::msg::ArmingCheckReply
+
+  - topic: /fmu/in/message_format_request
+    type: px4_msgs::msg::MessageFormatRequest
+
+  - topic: /fmu/in/mode_completed
+    type: px4_msgs::msg::ModeCompleted
+
+  - topic: /fmu/in/config_control_setpoints
+    type: px4_msgs::msg::VehicleControlMode
+
+  - topic: /fmu/in/manual_control_input
+    type: px4_msgs::msg::ManualControlSetpoint
 
   - topic: /fmu/in/offboard_control_mode
     type: px4_msgs::msg::OffboardControlMode
