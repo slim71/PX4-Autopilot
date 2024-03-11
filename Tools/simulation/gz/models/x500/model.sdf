@@ -215,18 +215,6 @@
           </friction>
         </surface>
       </collision>
-      <sensor name="air_pressure_sensor" type="air_pressure">
-        <always_on>1</always_on>
-        <update_rate>50</update_rate>
-        <air_pressure>
-          <pressure>
-            <noise type="gaussian">
-              <mean>0</mean>
-              <stddev>0.01</stddev>
-            </noise>
-          </pressure>
-        </air_pressure>
-      </sensor>
       <sensor name="imu_sensor" type="imu">
         <always_on>1</always_on>
         <update_rate>250</update_rate>
@@ -520,7 +508,8 @@
         </dynamics>
       </axis>
     </joint>
-   <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+   <plugin filename="gz-sim-multicopter-motor-model-system"
+           name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_0_joint</jointName>
       <linkName>rotor_0</linkName>
       <turningDirection>ccw</turningDirection>
@@ -536,7 +525,8 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
-    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_1_joint</jointName>
       <linkName>rotor_1</linkName>
       <turningDirection>ccw</turningDirection>
@@ -552,7 +542,8 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
-    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_2_joint</jointName>
       <linkName>rotor_2</linkName>
       <turningDirection>cw</turningDirection>
@@ -568,7 +559,8 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
-    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_3_joint</jointName>
       <linkName>rotor_3</linkName>
       <turningDirection>cw</turningDirection>
