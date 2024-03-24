@@ -18,6 +18,8 @@ param set-default COM_OF_LOSS_T 3
 
 param set-default RTL_RETURN_ALT 5
 
+param set-default SIM_BAT_ENABLE 0
+
 param set-default SENS_EN_GPSSIM 1
 param set-default SENS_EN_BAROSIM 1
 param set-default SENS_EN_MAGSIM 1
